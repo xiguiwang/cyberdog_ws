@@ -1,0 +1,26 @@
+diff --git a/cyberdog_common/CMakeLists.txt b/cyberdog_common/CMakeLists.txt
+index 819a8e6..59e982d 100644
+--- a/cyberdog_common/CMakeLists.txt
++++ b/cyberdog_common/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 3.8)
+ project(cyberdog_common)
+ 
++list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
++
+ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+   # 暂时使用-Wno-class-memaccess屏蔽掉rapidjson的编译警告
+   # 该警告来自于高等级(>=9)的gcc检查
+diff --git a/cyberdog_machine/CMakeLists.txt b/cyberdog_machine/CMakeLists.txt
+index a997276..b1b8544 100644
+--- a/cyberdog_machine/CMakeLists.txt
++++ b/cyberdog_machine/CMakeLists.txt
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 3.8)
+ project(cyberdog_machine)
+ 
++list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
++
+ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+   add_compile_options(-Wall -Wextra -Wpedantic)
+ endif()

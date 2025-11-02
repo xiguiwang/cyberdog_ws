@@ -1,0 +1,28 @@
+diff --git a/cyberdog_manager/CMakeLists.txt b/cyberdog_manager/CMakeLists.txt
+index e4aa4a2..7f633e7 100644
+--- a/cyberdog_manager/CMakeLists.txt
++++ b/cyberdog_manager/CMakeLists.txt
+@@ -28,7 +28,10 @@ find_package(low_power_consumption REQUIRED)
+ find_package(ament_index_cpp REQUIRED)
+ find_package(user_info_manager REQUIRED)
+ 
+-include_directories(include)
++include_directories(include
++     /workspace/install/low_power_consumption/include
++     /workspace/install/cyberdog_machine/include
++    )
+ 
+ add_executable(${PROJECT_NAME} src/cyberdog_manager.cpp src/main.cpp)
+ 
+diff --git a/user_info_manager/CMakeLists.txt b/user_info_manager/CMakeLists.txt
+index 6b16ea8..52c1556 100644
+--- a/user_info_manager/CMakeLists.txt
++++ b/user_info_manager/CMakeLists.txt
+@@ -26,6 +26,7 @@ endif()
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+ include_directories(include)
++include_directories(/workspace/install/protocol/include)
+ 
+ add_executable(test_node src/test_inteface_node.cpp)
+ add_executable(test_node2 test/test.cpp)
